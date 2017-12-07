@@ -68,24 +68,24 @@ RSpec.describe Robot do
       end
 
       it 'moves robot to south' do
-        robot.place(0, 0, 'SOUTH')
-        expect { robot.move }.to change { robot.y }.from(0).to(1)
+        robot.place(3, 4, 'SOUTH')
+        expect { robot.move }.to change { robot.y }.from(4).to(3)
       end
 
       it 'moves robot to north' do
         robot.place(0, 1, 'NORTH')
-        expect { robot.move }.to change { robot.y }.from(1).to(0)
+        expect { robot.move }.to change { robot.y }.from(1).to(2)
       end
     end
 
     context 'with invalid moves' do
       it 'does not cross southern edge' do
-        robot.place(0, 4, 'SOUTH')
+        robot.place(0, 0, 'SOUTH')
         expect { robot.move }.not_to change { robot.y }
       end
 
       it 'does not cross north edge' do
-        robot.place(0, 0, 'NORTH')
+        robot.place(0, 4, 'NORTH')
         expect { robot.move }.not_to change { robot.y }
       end
 

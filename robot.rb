@@ -21,7 +21,7 @@ class Robot
     new_position = [x, y]
 
     coordinate = ['WEST', 'EAST'].include?(direction) ? 0 : 1
-    unit = ['SOUTH', 'EAST'].include?(direction) ? 1 : -1
+    unit = ['NORTH', 'EAST'].include?(direction) ? 1 : -1
 
     new_position[coordinate] += unit
 
